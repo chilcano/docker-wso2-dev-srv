@@ -1,0 +1,8 @@
+.git
+\.DS_Store
+LICENSE
+VERSION
+README.md
+Changelog.md
+Makefile
+_downloads
