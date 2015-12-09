@@ -131,7 +131,7 @@ $ docker attach --no-stdin=false wso2esb01a
 
 ```
 
-Where `--no-stdin=false` means to enable the pseudo-TTY, to release shell, just send Ctrl+C.
+Where `--no-stdin=false` means to enable the pseudo-TTY and to release shell, just send Ctrl+C.
 
 __7) Get a Shell/SSH session from a running container:__
 
@@ -144,7 +144,7 @@ build.xml	chpasswd.bat   ciphertool.sh   org.wso2.carbon.bootstrap-4.2.0.jar  tc
 carbondump.bat	chpasswd.sh    java2wsdl.bat   tcpmon-1.0.jar			    tomcat-juli-7.0.34.jar  wsdl2java.sh   wso2esb-samples.sh	   yajsw
 ```
 
-... and tailing the wso2carbob.log:
+... and tailing the wso2carbon.log:
 
 ```bash
 root@4689e1574550:/opt/wso2esb01a/bin# tail -f ../repository/logs/wso2carbon.log
