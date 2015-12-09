@@ -33,9 +33,9 @@ Then, the scripts will create a base docker images and they are:
   * Postgress
   * Redis
   * Cassandra
-7. WSO2 Business Activity Monitor
+7. WSO2 Business Activity Monitor (wip)
   * version 2.5.0
-8. WSO2 Data Analytics Server
+8. WSO2 Data Analytics Server (wip)
   * version 3.0.0
 
 ## Getting starting
