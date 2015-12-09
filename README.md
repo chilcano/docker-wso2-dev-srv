@@ -1,6 +1,6 @@
 # Docker Containers to develop (micro)services with WSO2
 
-A set of Docker containers useful to compose Systems/Architectures (Micro)services layouts for development purpose using WSO2 and other products as ActiveMQ, Qpid, RabbitMQ, Monitoring tools, etc.
+A set of Docker scripts useful to compose Systems/Architectures containers layouts for (Micro)services development purpose using WSO2 and other products as ActiveMQ, Qpid, RabbitMQ, Monitoring tools, etc.
 
 ## Containers
 
@@ -14,8 +14,8 @@ The idea is creating several base docker images where we can compose complex arc
 Then, the scripts will create a base docker images and they are:
 
 1. WSO2 Enterprise Server Bus
-  version 4.8.1
-  version 4.9.0
+..version 4.8.1
+..version 4.9.0
 2. WSO2 API Manager
   version 1.8.0
   version 1.9.1
