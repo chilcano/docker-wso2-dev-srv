@@ -14,29 +14,29 @@ The idea is creating several base docker images where we can compose complex arc
 Then, the scripts will create a base docker images and they are:
 
 1. WSO2 Enterprise Server Bus
-..version 4.8.1
-..version 4.9.0
+..* version 4.8.1
+..* version 4.9.0
 2. WSO2 API Manager
-  version 1.8.0
-  version 1.9.1
+..* version 1.8.0
+..* version 1.9.1
 3. WSO2 Governance Registry (wip)
-  version 5.1.0
+..* version 5.1.0
 4. WSO2 Microservice Server (wip)
-  version 1.0.0-alpha
+..* version 1.0.0-alpha
 5. Message Broker (wip)
-  RabbitMQ
-  WSO2 Message Broker
-  Apache ActiveMQ
-  Apache Qpid
+..* RabbitMQ
+..* WSO2 Message Broker
+..* Apache ActiveMQ
+..* Apache Qpid
 6. Data Persistence (wip)
-  MySQL
-  Postgress
-  Redis
-  Cassandra
+..* MySQL
+..* Postgress
+..* Redis
+..* Cassandra
 7. WSO2 Business Activity Monitor
-  version 2.5.0
+..* version 2.5.0
 8. WSO2 Data Analytics Server
-  version 3.0.0
+..* version 3.0.0
 
 ## Getting starting
 
