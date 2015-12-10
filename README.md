@@ -41,7 +41,7 @@ Then, the available scripts to create a base docker images are:
   * version 3.0.0
 
 
-![WSO2 Development Server - Docker Containers Map](https://github.com/docker-wso2-dev-srv/blob/master/chilcano-wso2-dev-srv-docker-containers-map.png "WSO2 Development Server - Docker Containers Map")
+![WSO2 Development Server - Docker Containers Map](https://github.com/chilcano/docker-wso2-dev-srv/blob/master/chilcano-wso2-dev-srv-docker-containers-map.png "WSO2 Development Server - Docker Containers Map")
 
 
 ## Getting starting
