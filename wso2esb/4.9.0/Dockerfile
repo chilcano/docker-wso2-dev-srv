@@ -1,15 +1,19 @@
-# ==================================================================================== #
-# DOCKERFILE FOR WSO2 ESB 4.9.0                                                        #
-# ------------------------------------------------------------------------------------ #
-# Instructions:                                                                        #
-#   1) $ git clone https://github.com/chilcano/docker-wso2-dev-srv.git                 #
-#	2) $ cd docker-wso2-dev-srv                                                        #
-#   3) Download wso2esb-4.9.0.zip and copy it into 'wso2esb/4.9.0/assets/_downloads'   #
-# Build image:                                                                         #
-#   $ docker build --rm -t chilcano/wso2-esb:4.9.0 wso2esb/4.9.0                       #
-# Run container:                                                                       #
-#   $ docker run -d -t --name=wso2esb01a -p 19449:9443 chilcano/wso2-esb:4.9.0         #
-# ==================================================================================== #
+# Dockerfile to create a WSO2 Enterprise Service Bus
+#
+# Usage:
+#
+#   Previous steps:
+#     1) $ git clone https://github.com/chilcano/docker-wso2-dev-srv.git
+#     2) $ cd docker-wso2-dev-srv
+#     3) Download '<WSO2_BUNDLE_NAME>.zip' and copy it into '<WSO2_PRODUCT>/<VERSION>/assets/_downloads'
+#
+#   Build image:
+#     $ docker build --rm -t chilcano/wso2-esb:4.9.0 wso2esb/4.9.0
+#
+#   Run container:
+#     $ docker run -d -t --name=wso2esb01a -p 19449:9443 chilcano/wso2-esb:4.9.0
+# 
+
 
 # Base image with Java
 FROM java:openjdk-7

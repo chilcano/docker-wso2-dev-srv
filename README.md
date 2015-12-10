@@ -11,12 +11,12 @@ The configuration/functionalities not changed for each WSO2 container are:
 * H2 database
 
 The idea is creating several base docker images where we can compose complex architecture to implement (micro)services.
-Then, the scripts will create a base docker images and they are:
+Then, the available scripts to create a base docker images are:
 
-1. WSO2 Enterprise Server Bus
+1. (WSO2 Enterprise Server Bus)[http://wso2.com/products/enterprise-service-bus]
   * version 4.8.1
   * version 4.9.0
-2. WSO2 API Manager
+2. (WSO2 API Manager)[http://wso2.com/api-management/try-it]
   * version 1.8.0
   * version 1.9.1
 3. WSO2 Governance Registry (wip)
@@ -30,10 +30,10 @@ Then, the scripts will create a base docker images and they are:
   * Apache Qpid
 6. Data Persistence (wip)
   * MySQL
-  * Postgress
+  * PostgreSQL
   * Redis
   * Cassandra
-7. WSO2 Business Activity Monitor (wip)
+7. (WSO2 Business Activity Monitor)[http://wso2.com/more-downloads/business-activity-monitor]
   * version 2.5.0
 8. WSO2 Data Analytics Server (wip)
   * version 3.0.0

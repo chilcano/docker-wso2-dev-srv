@@ -1,4 +1,4 @@
-# Dockerfile to create a WSO2 Enterprise Service Bus
+# Dockerfile to create a WSO2 Business Activity Monitor container
 #
 # Usage:
 #
@@ -8,10 +8,10 @@
 #     3) Download '<WSO2_BUNDLE_NAME>.zip' and copy it into '<WSO2_PRODUCT>/<VERSION>/assets/_downloads'
 #
 #   Build image:
-#     $ docker build --rm -t chilcano/wso2-esb:4.8.1 wso2esb/4.8.1
+#     $ docker build --rm -t chilcano/wso2-bam:2.5.0 wso2bam/2.5.0
 #
 #   Run container:
-#     $ docker run -d -t --name=wso2esb01a -p 19449:9443 chilcano/wso2-esb:4.8.1
+#     $ docker run -d -t --name=wso2bam02a -p 19443:9443 chilcano/wso2-bam:2.5.0
 # 
 
 
@@ -20,8 +20,8 @@ FROM java:openjdk-7
 
 MAINTAINER Roger CARHUATOCTO <chilcano at intix dot info>
 
-ENV WSO2_BUNDLE_NAME=wso2esb-4.8.1
-ENV WSO2_FOLDER_NAME=wso2esb01a
+ENV WSO2_BUNDLE_NAME=wso2bam-2.5.0
+ENV WSO2_FOLDER_NAME=wso2bam02a
 ENV JAVA_HOME=/usr
 
 # Copy, unzip and remove WSO2 zip to/of container
@@ -31,9 +31,9 @@ RUN mv /opt/${WSO2_BUNDLE_NAME} /opt/${WSO2_FOLDER_NAME}
 RUN rm /opt/${WSO2_BUNDLE_NAME}.zip
 
 # Copy WSO2 custom config files to container
-# Modifications in 'carbon.xml': Offset +6, ServerName 'WSO2ESB01A', additional ServerRole 'ESB_FRONT_ROLE'
+#   Modifications in 'carbon.xml': Offset, ServerName and additional ServerRole
 COPY assets/_files/${WSO2_FOLDER_NAME}/repository/conf/carbon.xml /opt/${WSO2_FOLDER_NAME}/repository/conf/carbon.xml
-# Modifications in 'web.xml': SessionTimeout 600mins
+#   Modifications in 'web.xml': SessionTimeout 600mins
 COPY assets/_files/${WSO2_FOLDER_NAME}/repository/conf/tomcat/carbon/WEB-INF/web.xml /opt/${WSO2_FOLDER_NAME}/repository/conf/tomcat/carbon/WEB-INF/web.xml
 
 # Carbon ports (Offset +0)
