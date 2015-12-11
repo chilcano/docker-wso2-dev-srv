@@ -40,8 +40,7 @@ COPY assets/_files/${WSO2_FOLDER_NAME}/repository/conf/api-manager.xml /opt/${WS
 COPY assets/_files/${WSO2_FOLDER_NAME}/repository/conf/datasources/master-datasources.xml /opt/${WSO2_FOLDER_NAME}/repository/conf/datasources/master-datasources.xml
 
 # Carbon ports (Offset +0)
-EXPOSE 9443
-EXPOSE 8280
+EXPOSE 9443 9763 8280 8243 7711 10397
 
 # Expose WSO2 repository folder to Host
 VOLUME ["/opt/${WSO2_FOLDER_NAME}/repository/deployment/server"]
