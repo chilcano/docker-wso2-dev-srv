@@ -1,27 +1,32 @@
-# Dockerfile to create a WSO2 API Manager container
+# Dockerfile to create a WSO2 Data Services Server
 #
 # Usage:
 #
 #   Previous steps:
 #     1) $ git clone https://github.com/chilcano/docker-wso2-dev-srv.git
 #     2) $ cd docker-wso2-dev-srv
-#     3) Download '<WSO2_BUNDLE_NAME>.zip' and copy it into '<WSO2_PRODUCT>/<WSO2_VERSION>/assets/_downloads'
+#     3) Download '<WSO2_BUNDLE_NAME>.zip' and copy it into '<WSO2_FOLDER_NAME>/<WSO2_VERSION>/assets/_downloads'
 #
 #   Build image:
-#     $ docker build --rm -t chilcano/wso2-am wso2am/latest
+#     $ docker build --rm -t chilcano/wso2-dss:3.2.2 wso2dss/3.2.2
 #
 #   Run container:
-#     $ docker run -d -t --name=wso2am02a -p 19443:9443 chilcano/wso2-am
+#     $ docker run -d -t --name=<WSO2_FOLDER_NAME> -p 19446:9443 chilcano/wso2-dss:3.2.2
 # 
-
+#	Check WSO2 server:
+#	  $ docker exec -i -t <WSO2_FOLDER_NAME> bash
+#	  root@3031f21fcad3:/opt/<WSO2_FOLDER_NAME>/bin# tail -f ../repository/logs/wso2carbon.log
+#
+#	  $ curl -v -k https://<IP_ADDRESS>:19446/services/Version
+#
 
 # Base image with Java
 FROM java:openjdk-7
 
 MAINTAINER Roger CARHUATOCTO <chilcano at intix dot info>
 
-ENV WSO2_BUNDLE_NAME=wso2am-1.9.1
-ENV WSO2_FOLDER_NAME=wso2am02a
+ENV WSO2_BUNDLE_NAME=wso2dss-3.2.2
+ENV WSO2_FOLDER_NAME=wso2dss01a
 ENV JAVA_HOME=/usr
 
 # Copy, unzip and remove WSO2 zip to/of container
@@ -31,16 +36,13 @@ RUN mv /opt/${WSO2_BUNDLE_NAME} /opt/${WSO2_FOLDER_NAME}
 RUN rm /opt/${WSO2_BUNDLE_NAME}.zip
 
 # Copy WSO2 custom config files to container
-#   Modifications in 'carbon.xml': Offset, ServerName and additional ServerRole
+#   Modifications in 'carbon.xml': Offset, ServerName, additional ServerRole
 COPY assets/_files/${WSO2_FOLDER_NAME}/repository/conf/carbon.xml /opt/${WSO2_FOLDER_NAME}/repository/conf/carbon.xml
 #   Modifications in 'web.xml': SessionTimeout 600mins
 COPY assets/_files/${WSO2_FOLDER_NAME}/repository/conf/tomcat/carbon/WEB-INF/web.xml /opt/${WSO2_FOLDER_NAME}/repository/conf/tomcat/carbon/WEB-INF/web.xml
-#   Extra files
-COPY assets/_files/${WSO2_FOLDER_NAME}/repository/conf/api-manager.xml /opt/${WSO2_FOLDER_NAME}/repository/conf/api-manager.xml
-COPY assets/_files/${WSO2_FOLDER_NAME}/repository/conf/datasources/master-datasources.xml /opt/${WSO2_FOLDER_NAME}/repository/conf/datasources/master-datasources.xml
 
 # Carbon ports (Offset +0)
-EXPOSE 9443 9763 8280 8243 7711 10397
+EXPOSE 9443 9763 8243 8280
 
 # Expose WSO2 repository folder to Host
 VOLUME ["/opt/${WSO2_FOLDER_NAME}/repository/deployment/server"]

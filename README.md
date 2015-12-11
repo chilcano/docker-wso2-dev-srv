@@ -15,30 +15,35 @@ Then, the available scripts to create a base docker images are:
 
 1. [WSO2 Enterprise Server Bus](http://wso2.com/products/enterprise-service-bus)
   * version 4.8.1
-  * version 4.9.0
+  * version 4.9.0 (latest)
 2. [WSO2 API Manager](http://wso2.com/api-management/try-it)
   * version 1.8.0
-  * version 1.9.1
-3. WSO2 Governance Registry (wip)
-  * version 5.1.0
-4. WSO2 Microservice Server (wip)
+  * version 1.9.1 (latest)
+3. [WSO2 Data Services Server](http://wso2.com/products/data-services-server)
+  * version 3.2.1
+  * version 3.2.2
+  * version 3.5.0 (latest)
+4. WSO2 Governance Registry (wip)
+  * version 5.1.0  
+5. WSO2 Microservice Server (wip)
   * version 1.0.0-alpha
-5. Message Broker (wip)
+6. Message Broker (wip)
   * RabbitMQ
   * WSO2 Message Broker
   * Apache ActiveMQ
   * Apache Qpid
-6. Data Persistence (wip)
+7. Data Persistence (wip)
   * MySQL
   * PostgreSQL
   * Redis
   * Cassandra
-7. [WSO2 Business Activity Monitor](http://wso2.com/more-downloads/business-activity-monitor)
+8. [WSO2 Business Activity Monitor](http://wso2.com/more-downloads/business-activity-monitor)
   * version 2.5.0
-8. WSO2 Data Analytics Server (wip)
-  * version 3.0.0
-9. Wiremock Server (wip)
-  * version 3.0.0
+9. WSO2 Data Analytics Server (wip)
+  * version 3.0.0 (latest)
+10. [Wiremock Server](http://wiremock.org)
+  * Standalone version 2.0.6-beta
+  * Standalone version 2.0.7-beta (latest)
 
 
 ![WSO2 Development Server - Docker Containers Map](https://github.com/chilcano/docker-wso2-dev-srv/blob/master/chilcano-wso2-dev-srv-docker-containers-map.png "WSO2 Development Server - Docker Containers Map")

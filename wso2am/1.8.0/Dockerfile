@@ -5,7 +5,7 @@
 #   Previous steps:
 #     1) $ git clone https://github.com/chilcano/docker-wso2-dev-srv.git
 #     2) $ cd docker-wso2-dev-srv
-#     3) Download '<WSO2_BUNDLE_NAME>.zip' and copy it into '<WSO2_PRODUCT>/<VERSION>/assets/_downloads'
+#     3) Download '<WSO2_BUNDLE_NAME>.zip' and copy it into '<WSO2_PRODUCT>/<WSO2_VERSION>/assets/_downloads'
 #
 #   Build image:
 #     $ docker build --rm -t chilcano/wso2-am:1.8.0 wso2am/1.8.0

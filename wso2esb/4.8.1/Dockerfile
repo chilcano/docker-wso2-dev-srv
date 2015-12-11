@@ -5,7 +5,7 @@
 #   Previous steps:
 #     1) $ git clone https://github.com/chilcano/docker-wso2-dev-srv.git
 #     2) $ cd docker-wso2-dev-srv
-#     3) Download '<WSO2_BUNDLE_NAME>.zip' and copy it into '<WSO2_PRODUCT>/<VERSION>/assets/_downloads'
+#     3) Download '<WSO2_BUNDLE_NAME>.zip' and copy it into '<WSO2_PRODUCT>/<WSO2_VERSION>/assets/_downloads'
 #
 #   Build image:
 #     $ docker build --rm -t chilcano/wso2-esb:4.8.1 wso2esb/4.8.1
@@ -31,9 +31,9 @@ RUN mv /opt/${WSO2_BUNDLE_NAME} /opt/${WSO2_FOLDER_NAME}
 RUN rm /opt/${WSO2_BUNDLE_NAME}.zip
 
 # Copy WSO2 custom config files to container
-# Modifications in 'carbon.xml': Offset +6, ServerName 'WSO2ESB01A', additional ServerRole 'ESB_FRONT_ROLE'
+#   Modifications in 'carbon.xml': Offset, ServerName, additional ServerRole
 COPY assets/_files/${WSO2_FOLDER_NAME}/repository/conf/carbon.xml /opt/${WSO2_FOLDER_NAME}/repository/conf/carbon.xml
-# Modifications in 'web.xml': SessionTimeout 600mins
+#   Modifications in 'web.xml': SessionTimeout 600mins
 COPY assets/_files/${WSO2_FOLDER_NAME}/repository/conf/tomcat/carbon/WEB-INF/web.xml /opt/${WSO2_FOLDER_NAME}/repository/conf/tomcat/carbon/WEB-INF/web.xml
 
 # Carbon ports (Offset +0)
