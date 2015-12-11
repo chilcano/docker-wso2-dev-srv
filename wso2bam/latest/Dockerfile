@@ -37,8 +37,7 @@ COPY assets/_files/${WSO2_FOLDER_NAME}/repository/conf/carbon.xml /opt/${WSO2_FO
 COPY assets/_files/${WSO2_FOLDER_NAME}/repository/conf/tomcat/carbon/WEB-INF/web.xml /opt/${WSO2_FOLDER_NAME}/repository/conf/tomcat/carbon/WEB-INF/web.xml
 
 # Carbon ports (Offset +0)
-EXPOSE 9443
-EXPOSE 8280
+EXPOSE 9443 9763 9160 7711 7611 21000
 
 # Expose WSO2 repository folder to Host
 VOLUME ["/opt/${WSO2_FOLDER_NAME}/repository/deployment/server"]
