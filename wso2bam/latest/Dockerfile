@@ -13,6 +13,12 @@
 #   Run container:
 #     $ docker run -d -t --name=wso2bam02a -p 19443:9443 chilcano/wso2-bam
 # 
+#	Check the WSO2 server:
+#	  $ docker exec -i -t wso2bam02a bash
+#	  root@4178f21fcad3:/opt/wso2bam02a/bin# tail -f ../repository/logs/wso2carbon.log
+#
+#	  $ curl -v -k https://<IP_ADDRESS>:19443/services/Version
+#
 
 
 # Base image with Java
@@ -25,7 +31,9 @@ ENV WSO2_FOLDER_NAME=wso2bam02a
 ENV JAVA_HOME=/usr
 
 # Copy, unzip and remove WSO2 zip to/of container
-COPY assets/_downloads/${WSO2_BUNDLE_NAME}.zip /opt/
+##COPY assets/_downloads/${WSO2_BUNDLE_NAME}.zip /opt/
+# Disable the next line and enable the above one if you have downloaded and copied the ZIP file manually.
+RUN wget -q -P /opt https://s3-us-west-2.amazonaws.com/wso2-stratos/${WSO2_BUNDLE_NAME}.zip
 RUN unzip /opt/${WSO2_BUNDLE_NAME}.zip -d /opt/ > /opt/${WSO2_FOLDER_NAME}.listfiles
 RUN mv /opt/${WSO2_BUNDLE_NAME} /opt/${WSO2_FOLDER_NAME}
 RUN rm /opt/${WSO2_BUNDLE_NAME}.zip

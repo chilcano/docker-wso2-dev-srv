@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.6.1 (2015-12-14)
+
+- Dockerfiles for WSO2 ESB, WSO2 AM, WSO2 BAM and WSO2 DSS updated to fix automated build in hub.docker.com
+
 ## 0.6 (2015-12-11)
 
 - Dockerfiles for WSO2 DSS 3.2.1, 3.2.2 and 3.5.0
