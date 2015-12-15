@@ -33,7 +33,7 @@ ENV JAVA_HOME=/usr
 # Copy, unzip and remove WSO2 zip to/of container
 ##COPY assets/_downloads/${WSO2_BUNDLE_NAME}.zip /opt/
 # Disable the next line and enable the above one if you have downloaded and copied the ZIP file manually.
-RUN wget --referer="http://connect.wso2.com/wso2/getform/reg/new_product_download" -U testuser -q -P /opt http://dist2.wso2.org/products/data-services-server/${WSO2_BUNDLE_VER}/${WSO2_BUNDLE_NAME}.zip
+RUN wget --referer="http://connect.wso2.com/wso2/getform/reg/new_product_download" -U testuser -q -P /opt http://product-dist.wso2.com/products/data-services-server/${WSO2_BUNDLE_VER}/${WSO2_BUNDLE_NAME}.zip
 RUN unzip /opt/${WSO2_BUNDLE_NAME}.zip -d /opt/ > /opt/${WSO2_FOLDER_NAME}.listfiles
 RUN mv /opt/${WSO2_BUNDLE_NAME} /opt/${WSO2_FOLDER_NAME}
 RUN rm /opt/${WSO2_BUNDLE_NAME}.zip
