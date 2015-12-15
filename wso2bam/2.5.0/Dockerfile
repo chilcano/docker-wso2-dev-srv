@@ -26,14 +26,15 @@ FROM java:openjdk-7
 
 MAINTAINER Roger CARHUATOCTO <chilcano at intix dot info>
 
-ENV WSO2_BUNDLE_NAME=wso2bam-2.5.0
+ENV WSO2_BUNDLE_VER=2.5.0
+ENV WSO2_BUNDLE_NAME=wso2bam-${WSO2_BUNDLE_VER}
 ENV WSO2_FOLDER_NAME=wso2bam02a
 ENV JAVA_HOME=/usr
 
 # Copy, unzip and remove WSO2 zip to/of container
 ##COPY assets/_downloads/${WSO2_BUNDLE_NAME}.zip /opt/
 # Disable the next line and enable the above one if you have downloaded and copied the ZIP file manually.
-RUN wget -q -P /opt https://s3-us-west-2.amazonaws.com/wso2-stratos/${WSO2_BUNDLE_NAME}.zip
+RUN wget --referer="http://connect.wso2.com/wso2/getform/reg/new_product_download" -U testuser -q -P /opt http://product-dist.wso2.com/products/business-activity-monitor/${WSO2_BUNDLE_VER}/${WSO2_BUNDLE_NAME}.zip
 RUN unzip /opt/${WSO2_BUNDLE_NAME}.zip -d /opt/ > /opt/${WSO2_FOLDER_NAME}.listfiles
 RUN mv /opt/${WSO2_BUNDLE_NAME} /opt/${WSO2_FOLDER_NAME}
 RUN rm /opt/${WSO2_BUNDLE_NAME}.zip
