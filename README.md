@@ -43,6 +43,7 @@ Then, the available scripts to create a base docker images are:
   * version 3.0.0 (latest)
 10. [Wiremock Server](http://wiremock.org)
   * Standalone version 2.0.6-beta
+  * Standalone version 2.0.7-beta
   * Standalone version 2.0.7-beta (latest)
 
 
