@@ -6,7 +6,7 @@
 #     1) $ git clone https://github.com/chilcano/docker-wso2-dev-srv.git
 #     2) $ cd docker-wso2-dev-srv
 #     3) Download manually 'https://repo1.maven.org/maven2/com/github/tomakehurst/wiremock-standalone/${WIREMOCK_VERSION}/${WIREMOCK_BUNDLE}.jar'
-#     3) Copy the JAR file into 'wiremock/<WIREMOCK_VERSION>/assets/_downloads'
+#     4) Copy the JAR file into 'wiremock/<WIREMOCK_VERSION>/assets/_downloads'
 #
 #   Build image:
 #     $ docker build --rm -t chilcano/wiremock wiremock/latest
@@ -66,4 +66,3 @@ WORKDIR ${WIREMOCK_FOLDER}
 
 # Start Wiremock
 CMD java -jar bin/${WIREMOCK_BUNDLE}.jar ${WIREMOCK_ARGS} > logs/wiremock.log 
-# CMD ["${WIREMOCK_FOLDER}/bin/wiremock.sh", "start"]
