@@ -9,14 +9,14 @@
 #     4) Copy the JAR file into 'wiremock/<WIREMOCK_VERSION>/assets/_downloads'
 #
 #   Build image:
-#     $ docker build --rm -t chilcano/wiremock wiremock/latest
+#     $ docker build --rm -t chilcano/wiremock:2.0.8-beta wiremock/2.0.8-beta
 #
 #   Run container:
-#     $ docker run -d -t --name=wiremock -p 18080:8080 -p 18443:8443 chilcano/wiremock
+#     $ docker run -d -t --name=wiremock -p 18080:8080 -p 18443:8443 chilcano/wiremock:2.0.8-beta
 #
 #	Run container sharing a host folder:
 #	  $ git clone https://github.com/chilcano/wso2-ei-patterns.git
-#	  $ docker run -d -t -v $PWD/../wso2-ei-patterns/wiremock-stubs:/opt/wiremock/stubs --name=wiremock -p 18080:8080 -p 18443:8443 chilcano/wiremock
+#	  $ docker run -d -t -v $PWD/../wso2-ei-patterns/wiremock-stubs:/opt/wiremock/stubs --name=wiremock -p 18080:8080 -p 18443:8443 chilcano/wiremock:2.0.8-beta
 # 
 #	Check the Wiremock server:
 #	  $ docker exec -i -t wiremock bash
