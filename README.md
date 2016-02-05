@@ -40,7 +40,8 @@ Then, the available scripts to create a base docker images are:
 8. [WSO2 Business Activity Monitor](http://wso2.com/more-downloads/business-activity-monitor)
   * version 2.5.0
 9. WSO2 Data Analytics Server (wip)
-  * version 3.0.0 (latest)
+  * version 3.0.0
+  * version 3.0.1 (latest)
 10. [Wiremock Server](http://wiremock.org)
   * Standalone version 2.0.6-beta
   * Standalone version 2.0.7-beta
