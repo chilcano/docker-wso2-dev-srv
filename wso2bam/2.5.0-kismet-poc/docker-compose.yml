@@ -1,0 +1,30 @@
+# Docker Compose file to create a WSO2 BAM container for WIFI Traffic capture PoC
+
+# cd ~/1github-repo/docker-wso2-dev-srv/wso2bam/2.5.0-kismet-poc
+# docker-compose up -d
+# $ docker-compose logs
+# Attaching to 250kismetpoc_wso2bam-dashboard-kismet_1, 250kismetpoc_mac-manuf_1
+# wso2bam-dashboard-kismet_1 | JAVA_HOME environment variable is set to /usr
+# wso2bam-dashboard-kismet_1 | CARBON_HOME environment variable is set to /opt/wso2bam02a
+# ...
+# wso2bam-dashboard-kismet_1 | [2016-03-08 17:12:01,714]  INFO {org.wso2.carbon.core.services.util.CarbonAuthenticationUtil} -  'admin@carbon.super [-1234]' logged in at [2016-03-08 17:12:01,714+0000]
+# mac-manuf_1                |  * Running on https://0.0.0.0:5443/ (Press CTRL+C to quit)
+# mac-manuf_1                |  * Restarting with stat
+# mac-manuf_1                |  * Debugger is active!
+# mac-manuf_1                |  * Debugger pin code: 162-079-671
+# mac-manuf_1                | 192.168.99.1 - - [08/Mar/2016 17:03:46] "GET /chilcano/api/manuf/00-50:Ca-ca-fe-ca HTTP/1.1" 200 -
+
+
+
+wso2bam-dashboard-kismet:
+  build: .
+  ports:
+    - "9445:9443/tcp"
+    - "7713:7711/tcp"
+  links:
+    - mac-manuf
+
+mac-manuf:
+  image: chilcano/mac-manuf-lookup:py-latest
+  ports:
+    - "5443:5443/tcp"
